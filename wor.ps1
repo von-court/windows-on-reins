@@ -81,7 +81,10 @@ $beTaskScheduleSafe = 0
 # 1 = Enable it.  
 # Note: Top priority configuration, overrides other settings.
 
-$disableCortana = 0
+$beDockerSafe = 0
+# 0 = Hinders Docker.
+# 1 = Keeps it working.
+
 # 0 = Enable Cortana
 # 1 = Disable Cortana *Recomended
 
@@ -681,9 +684,11 @@ Function DisableDnsCache {
 		return
 	}
 	
+	if ($beDockerSafe -eq 0) {
 	Write-Output "Flushing DNS."
 	ipconfig /flushDNS
 	RegChange "SYSTEM\CurrentControlSet\services\Dnscache" "Start" "4" "Disabling DNS Cache Service" "DWord"
+	}
 }
 
 Function EnableDnsCache {	
@@ -1006,7 +1011,7 @@ if ($beCastSafe -eq 1) {
 	Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like "*Microsoft.PPIP*" | Add-AppxProvisionedPackage -Online
 }
 
-if ($beVpnPppoeSafe -eq 1) {
+if ($beVpnPppoeSafe -eq 1 -or $beDockerSafe -eq 1) {
 	RegChange "SYSTEM\CurrentControlSet\services\Dnscache" "Start" "2" "Enabling DNS Cache Service" "DWord"	
 }
 	
@@ -1409,8 +1414,11 @@ if ($doPerformanceStuff -eq 1) {
 	regDelete "Software\Microsoft\Windows\CurrentVersion\Run\OneDrive" "Disabling OneDrive auto start"
 	
 	if ($beNetworkPrinterSafe -eq 0) {
+
+		if ($beDockerSafe -eq 0) {
 		Write-Host "Disabling LanmanWorkstation Service..."
 		Get-Service Workstation | Stop-Service -PassThru | Set-Service -StartupType disabled
+		}
 		
 		Write-Host "Disabling LanmanServer Service..."
 		Get-Service Server | Stop-Service -PassThru | Set-Service -StartupType disabled
