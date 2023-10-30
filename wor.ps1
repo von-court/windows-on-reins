@@ -97,6 +97,10 @@ $beOneDriveSafe = 1
 # 0 = Uninstalls OneDrive.
 # 1 = Doesn't uninstall it (if installed) 
 
+$beWslSafe = 1
+# 0 = Hinders (at least) the installation of a WSL distribution (Windows Subsystem for Linux).
+# 1 = Lets you install it. 
+
 # 0 = Enable Cortana
 # 1 = Disable Cortana *Recomended
 
@@ -696,7 +700,7 @@ Function DisableDnsCache {
 		return
 	}
 	
-	if ($beDockerSafe -eq 0) {
+	if ($beDockerSafe -eq 0 -and $beWslSafe -eq 0) {
 	Write-Output "Flushing DNS."
 	ipconfig /flushDNS
 	RegChange "SYSTEM\CurrentControlSet\services\Dnscache" "Start" "4" "Disabling DNS Cache Service" "DWord"
@@ -1459,6 +1463,13 @@ if ($doPerformanceStuff -eq 1) {
 		RegChange "SYSTEM\CurrentControlSet\Services\camsvc" "Start" "2" "Enabling camsvc service" "DWord"
 		Get-Service camsvc | Set-Service -StartupType automatic
 	}	
+
+	if ($beWslSafe -eq 0) {
+		# Also hinders installation of Windows Subsystem for Linux (WSL)
+		RegChange "SYSTEM\CurrentControlSet\Services\StorSvc" "Start" "4" "Disabling StorSvc (Storage Service) service" "DWord"
+		Get-Service StorSvc | Set-Service -StartupType disabled
+	}
+
 }
 
 if ($doQualityOfLifeStuff -eq 0) {
