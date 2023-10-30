@@ -1301,9 +1301,6 @@ if ($doPerformanceStuff -eq 0) {
 	# BITS (Background Intelligent Transfer Service), its aggressive bandwidth eating will interfere with you online gameplay, work and navigation. Its aggressive disk usable will reduce your HDD or SSD lifespan
 	write-Host "Enabling BITS (Background Intelligent Transfer Service)" -ForegroundColor Green -BackgroundColor Black 
 	Get-Service BITS | Set-Service -StartupType automatic
-
-	Write-Host "Disabling netsvcs. Its known for huge bandwidth usage..."
-	Get-Service netsvcs | Stop-Service -PassThru | Set-Service -StartupType disabled	
 	
 	#RegChange "SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization" "DODownloadMode" "3" "Enabling DeliveryOptimization download mode HTTP blended with Internet Peering..." "DWord"
 	#RegChange "SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" "DODownloadMode" "3" "Enabling DeliveryOptimization download mode HTTP blended with Internet Peering..." "DWord"	
@@ -1410,9 +1407,6 @@ if ($doPerformanceStuff -eq 1) {
 	
 	Write-Output "Disabling LGHUBUpdaterService (bandwidth usage, lack of parameters for users to choose when its suppose to update)..."
 	Get-Service LGHUBUpdaterService | Stop-Service -PassThru | Set-Service -StartupType disabled
-	
-	Write-Host "Disabling netsvcs. Its known for huge bandwidth usage..."
-	Get-Service netsvcs | Stop-Service -PassThru | Set-Service -StartupType disabled
 	
 	if ($(serviceStatus("Schedule")) -eq "running") {
 		write-Host -ForegroundColor Green -BackgroundColor Black "Defragmentation cause unnecessary wear on SSDs"
