@@ -138,7 +138,10 @@ $disableWindowsFirewall = 1
 
 $disableWindowsUpdates = 1
 # 0 = Enable Windows Updates.
-# 1 = Disable Windows Updates. *Recomended.
+
+$disableMSStore = 1
+# 0 = Enable.
+# 1 = Disable. *Recommended.
 
 $disableTelemetry = 1
 # 0 = Enable Telemetry.
@@ -1466,7 +1469,7 @@ if ($doPerformanceStuff -eq 1) {
 		Get-Service camsvc | Set-Service -StartupType automatic
 	}	
 
-	if ($beWslSafe -eq 0) {
+	if ($disableMSStore -eq 1 -and $beWslSafe -eq 0) {
 		# Also hinders installation of Windows Subsystem for Linux (WSL)
 		RegChange "SYSTEM\CurrentControlSet\Services\StorSvc" "Start" "4" "Disabling StorSvc (Storage Service) service" "DWord"
 		Get-Service StorSvc | Set-Service -StartupType disabled
