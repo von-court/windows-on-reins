@@ -123,7 +123,8 @@ $installNvidiaControlPanel = 1
 # Note: The script will check if your GPU vendor is Nvidia
 # Note: Refers to the new Nvidia Appx. Nvidia driver install dont cames with control panel anymore.
 
-$darkTheme = 1
+$darkTheme = -1
+# -1 = Preserve your current custom setup
 # 0 = Use Windows and apps default light theme.
 # 1 = Enable dark theme. *Recomended.
 
