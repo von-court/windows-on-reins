@@ -101,6 +101,7 @@ $beWslSafe = 1
 # 0 = Hinders (at least) the installation of a WSL distribution (Windows Subsystem for Linux).
 # 1 = Lets you install it. 
 
+$disableCortana = 1
 # 0 = Enable Cortana
 # 1 = Disable Cortana *Recomended
 
