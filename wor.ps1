@@ -85,6 +85,10 @@ $beDockerSafe = 0
 # 0 = Hinders Docker.
 # 1 = Keeps it working.
 
+$beLenovoVantagePowerSettingsSafe = 1
+# 0 = Hinders Lenovo Vantage's Power Settings.
+# 1 = Keeps it working. 
+
 # 0 = Enable Cortana
 # 1 = Disable Cortana *Recomended
 
@@ -1801,8 +1805,7 @@ if ($doPrivacyStuff -eq 1) {
 	RegChange "SYSTEM\ControlSet\Control\WMI\AutoLogger\WiFiSession" "Start" "0" "Disabling AutoLogger\WiFiSession..." "DWord"	
 	RegChange "SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds" "AllowBuildPreview" "0" "Disabling Windows Insider Program..." "DWord"	
 	
-
-	if ($beTaskScheduleSafe -eq 1) {
+	if ($beTaskScheduleSafe -eq 1 -or $beLenovoVantagePowerSettingsSafe -eq 1) {
 		Write-Host "TimeBrokerSvc NOT disabled because of the beTaskScheduleSafe configuration" -ForegroundColor Yellow -BackgroundColor DarkGreen
 		RegChange "SYSTEM\CurrentControlSet\Services\TimeBrokerSvc" "Start" "2" "Enabling Time Brooker..." "DWord"
 	} else {	
