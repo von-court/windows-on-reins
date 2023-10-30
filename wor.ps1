@@ -1317,6 +1317,13 @@ if ($doPerformanceStuff -eq 0) {
 	
 	RegChange "SYSTEM\CurrentControlSet\Services\camsvc" "Start" "2" "Enabling camsvc service" "DWord"
 	Get-Service camsvc | Set-Service -StartupType automatic
+
+	RegChange "SYSTEM\CurrentControlSet\Services\SCardSvr" "Start" "2" "Enabling SCardSvr (Smart Card) service" "DWord"
+	Get-Service SCardSvr | Set-Service -StartupType automatic
+
+	RegChange "SYSTEM\CurrentControlSet\Services\PhoneSvc" "Start" "2" "Enabling PhoneSvc (Phone Service) service" "DWord"
+	Get-Service PhoneSvc | Set-Service -StartupType automatic
+
 }
 
 if ($doPerformanceStuff -eq 1) {
@@ -1473,6 +1480,12 @@ if ($doPerformanceStuff -eq 1) {
 		RegChange "SYSTEM\CurrentControlSet\Services\StorSvc" "Start" "4" "Disabling StorSvc (Storage Service) service" "DWord"
 		Get-Service StorSvc | Set-Service -StartupType disabled
 	}
+
+	RegChange "SYSTEM\CurrentControlSet\Services\SCardSvr" "Start" "4" "Disabling SCardSvr (Smart Card) service" "DWord"
+	Get-Service SCardSvr | Set-Service -StartupType disabled
+
+	RegChange "SYSTEM\CurrentControlSet\Services\PhoneSvc" "Start" "4" "Disabling PhoneSvc (Phone Service) service" "DWord"
+	Get-Service PhoneSvc | Set-Service -StartupType disabled
 
 }
 
