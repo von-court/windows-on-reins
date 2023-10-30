@@ -1380,8 +1380,10 @@ if ($doPerformanceStuff -eq 1) {
 	RegChange "SYSTEM\CurrentControlSet\Services\DoSvc" "Start" "4" "Disabling DoSvc (Delivery Optimization) service" "DWord"
 	Get-Service DoSvc | Set-Service -StartupType disabled
 	
+	if ($beOneDriveSafe -eq 0 ) {
 	RegChange "SYSTEM\CurrentControlSet\Services\OneSyncSvc" "Start" "4" "Disabling OneSyncSvc service" "DWord"
 	Get-Service OneSyncSvc | Set-Service -StartupType disabled
+	}
 	
 	RegChange "SYSTEM\CurrentControlSet\Services\WalletService" "Start" "4" "Disabling WalletService service" "DWord"
 	Get-Service WalletService | Set-Service -StartupType disabled
