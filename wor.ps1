@@ -89,6 +89,10 @@ $beLenovoVantagePowerSettingsSafe = 1
 # 0 = Hinders Lenovo Vantage's Power Settings.
 # 1 = Keeps it working. 
 
+$beWindowsInsiderSafe = 1
+# 0 = Hinders Windows Insider builds.
+# 1 = Keeps it working. 
+
 # 0 = Enable Cortana
 # 1 = Disable Cortana *Recomended
 
@@ -1803,7 +1807,10 @@ if ($doPrivacyStuff -eq 1) {
 	RegChange "SYSTEM\ControlSet\Control\WMI\AutoLogger\WFP-IPsec Trace" "Start" "0" "Disabling AutoLogger\WFP-IPsec Trace..." "DWord"	
 	RegChange "SYSTEM\ControlSet\Control\WMI\AutoLogger\WiFiDriverIHVSessionRepro" "Start" "0" "Disabling AutoLogger\WiFiDriverIHVSessionRepro..." "DWord"	
 	RegChange "SYSTEM\ControlSet\Control\WMI\AutoLogger\WiFiSession" "Start" "0" "Disabling AutoLogger\WiFiSession..." "DWord"	
+
+	if ($beWindowsInsiderSafe -eq 0 ) {
 	RegChange "SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds" "AllowBuildPreview" "0" "Disabling Windows Insider Program..." "DWord"	
+	}
 	
 	if ($beTaskScheduleSafe -eq 1 -or $beLenovoVantagePowerSettingsSafe -eq 1) {
 		Write-Host "TimeBrokerSvc NOT disabled because of the beTaskScheduleSafe configuration" -ForegroundColor Yellow -BackgroundColor DarkGreen
