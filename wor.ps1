@@ -93,6 +93,10 @@ $beWindowsInsiderSafe = 1
 # 0 = Hinders Windows Insider builds.
 # 1 = Keeps it working. 
 
+$beOneDriveSafe = 1
+# 0 = Uninstalls OneDrive.
+# 1 = Doesn't uninstall it (if installed) 
+
 # 0 = Enable Cortana
 # 1 = Disable Cortana *Recomended
 
@@ -2555,6 +2559,9 @@ if ($visual -like "y") {
 	choco install vscode -y
 }
 
+
+if ($beOneDriveSafe -eq 0 ) {
+
 # REMOVE ONEDRIVE
 kill -processname OneDrive, aaa -Force -Verbose -EA SilentlyContinue
 if($?){   write-Host -ForegroundColor Green "One Drive process has been stoped"  }else{   write-Host -ForegroundColor Green "One Drive process is not running" } 
@@ -2575,6 +2582,7 @@ if($?){   write-Host -ForegroundColor Green "One Drive temp files Removed (Step 
 Remove-Item "$env:LOCALAPPDATA\Microsoft\OneDrive\" -Force -EA SilentlyContinue | Out-Null
 if($?){   write-Host -ForegroundColor Green "One Drive appdata folder removed"  }else{   write-Host -ForegroundColor green "One Drive appdata folder not present" } 
 
+}
 
 # Disable ShadowCopy
 vssadmin delete shadows /all /quiet | Out-Null
