@@ -11,19 +11,19 @@
 # List of Options
 
 $troubleshootInstalls = 0
-# 0 = Do nothing. *Recomended.
+# 0 = Do nothing. *Recommended.
 # 1 = Enable essential stuff needed for some installations.
 # Note: Set to 1 if you are having trouble installing something on you pc.
 # Note: Known to fix these installations: windows language pack, Autodesk AutoCad and Appxs.
 # Note: Top priority configuration, overrides other settings.
 
 $beWifiSafe = 1
-# 0 = May disable services required to use Wifi. *Recomended.
+# 0 = May disable services required to use Wifi. *Recommended.
 # 1 = Keep Wifi working
 # Note: Top priority configuration, overrides other settings.
 
 $beMicrophoneSafe = 1
-# 0 = Disable services required to use the microphone. *Recomended.
+# 0 = Disable services required to use the microphone. *Recommended.
 # 1 = Keep microphone working
 # Note: Top priority configuration, overrides other settings.
 
@@ -34,50 +34,50 @@ $beAppxSafe = 0
 # Note: Will keep Windows updates active
 
 $beXboxSafe = 0
-# 0 = Disable Xbox and Windows Live Games related stuff like Game Bar. *Recomended.
+# 0 = Disable Xbox and Windows Live Games related stuff like Game Bar. *Recommended.
 # 1 = Enable it.
 # Note: Top priority configuration, overrides other settings.
 
 $beBiometricSafe = 0
-# 0 = Disable biometric related stuff. *Recomended.
+# 0 = Disable biometric related stuff. *Recommended.
 # 1 = Enable it.
 # Note: Refers to lockscreen, fingerprint reader, illuminated IR sensor or other biometric sensors.
 # Note: Top priority configuration, overrides other settings.
 
 $beNetworkPrinterSafe = 0
-# 0 = Disable network printer. *Recomended.
+# 0 = Disable network printer. *Recommended.
 # 1 = Enable it.
 # Note: Top priority configuration, overrides other settings.
 
 $beNetworkFolderSafe = 0
-# 0 = Disable network folders. *Recomended.
+# 0 = Disable network folders. *Recommended.
 # 1 = Enable it.
 # Note: Top priority configuration, overrides other settings.
 
 $beAeroPeekSafe = 0
-# 0 = Disable Windows Aero Peek. *Recomended.
+# 0 = Disable Windows Aero Peek. *Recommended.
 # 1 = Enable it to Windows defaults.
 # Note: Top priority configuration, overrides other settings.
 
 $beThumbnailSafe = 0
-# 0 = Disable Windows Thumbnails. *Recomended.
+# 0 = Disable Windows Thumbnails. *Recommended.
 # 1 = Enable it to Windows defaults.
 # Note: Refers to the use of thumbnails instead of icon to some files.
 # Note: Top priority configuration, overrides other settings.
 
 $beCastSafe = 0
-# 0 = Disable Casting. *Recomended.
+# 0 = Disable Casting. *Recommended.
 # 1 = Enable it.  
 # Note: Refers to the Windows ability to Cast screen to another device and or monitor, PIP (Picture-in-picture), projecting to another device.
 # Note: Top priority configuration, overrides other settings.
 
 $beVpnPppoeSafe = 0
-# 0 = Will make the system safer against DNS cache poisoning but VPN or PPPOE conns may stop working. *Recomended.
+# 0 = Will make the system safer against DNS cache poisoning but VPN or PPPOE conns may stop working. *Recommended.
 # 1 = This script will not mess with stuff required for VPN or PPPOE to work.  
 # Note: Set it to 1 if you pretend to use VPN, PPP conns, if the system is inside a VM or having trouble with internet.
 
 $beTaskScheduleSafe = 0
-# 0 = Disable Task Schedule. *Recomended.
+# 0 = Disable Task Schedule. *Recommended.
 # 1 = Enable it.  
 # Note: Top priority configuration, overrides other settings.
 
@@ -103,99 +103,100 @@ $beWslSafe = 1
 
 $disableCortana = 1
 # 0 = Enable Cortana
-# 1 = Disable Cortana *Recomended
+# 1 = Disable Cortana *Recommended
 
 $legacyRightClicksMenu = 1
 # 0 = Use Windows 11 right click menu
-# 1 = Use legacy right click menu *Recomended
+# 1 = Use legacy right click menu *Recommended
 
 $disableStartupSound = 1
 # 0 = Keep Windows 11 startup sound
-# 1 = Disable Windows 11 startup sound *Recomended
+# 1 = Disable Windows 11 startup sound *Recommended
 
 $useGoogleDNS = 1
 # 0 = Nothing
-# 1 = Apply Google DNS to connections *Recomended.
+# 1 = Apply Google DNS to connections *Recommended.
 
 $installNvidiaControlPanel = 1
 # 0 = Remove Nvidia Appx.
-# 1 = Install Nvidia control panel. *Recomended.
+# 1 = Install Nvidia control panel. *Recommended.
 # Note: The script will check if your GPU vendor is Nvidia
 # Note: Refers to the new Nvidia Appx. Nvidia driver install dont cames with control panel anymore.
 
 $darkTheme = -1
 # -1 = Preserve your current custom setup
 # 0 = Use Windows and apps default light theme.
-# 1 = Enable dark theme. *Recomended.
+# 1 = Enable dark theme. *Recommended.
 
 $draculaThemeNotepad = 1
 # 0 = Disable Dracula theme for Notepad++.
-# 1 = Enable Dracula theme for Notepad++. *Recomended.
+# 1 = Enable Dracula theme for Notepad++. *Recommended.
 
-$disableWindowsFirewall = 1
+$disableWindowsFirewall = 0
 # 0 = Enable.
-# 1 = Disable. *Recomended.
+# 1 = Disable. *Recommended.
 
-$disableWindowsUpdates = 1
+$disableWindowsUpdates = 0
 # 0 = Enable Windows Updates.
+# 1 = Disable Windows Updates. *Recommended.
 
 $disableMSStore = 1
 # 0 = Enable.
 # 1 = Disable. *Recommended.
 
-$disableTelemetry = 1
+$disableTelemetry = 0
 # 0 = Enable Telemetry.
-# 1 = Disable Telemetry. *Recomended.
+# 1 = Disable Telemetry. *Recommended.
 # Note: Microsoft uses telemetry to periodically collect information about Windows systems. It is possible to acquire information as the computer hardware serial number, the connection records for external storage devices, and traces of executed processes.
 # Note: This tweak may cause Enterprise edition to stop receiving Windows updates.
 
 $disableSMBServer = 1
 # 0 = Enable SMB Server. 
-# 1 = Disable it. *Recomended.
+# 1 = Disable it. *Recommended.
 # Note: SMB Server is used for file and printer sharing.
 
 $disablelastaccess = 1
 # 0 = Enable it.
-# 1 = Disable last file access date. *Recomended.
+# 1 = Disable last file access date. *Recommended.
 
 $doQualityOfLifeStuff = 1
 # 0 = Reverse system settings to default.
-# 1 = Perform routines to increase quality of life. *Recomended.
+# 1 = Perform routines to increase quality of life. *Recommended.
 
 $doPerformanceStuff = 1
 # 0 = Reverse system settings to default.
-# 1 = Perform routines to increase system performance. *Recomended.
+# 1 = Perform routines to increase system performance. *Recommended.
 
 $doPrivacyStuff = 1
 # 0 = Reverse system settings to default.
-# 1 = Perform routines to increase system privacy. *Recomended.
+# 1 = Perform routines to increase system privacy. *Recommended.
 
 $doSecurityStuff = 1
 # 0 = Reverse system settings to default.
-# 1 = Perform routines to increase system security. *Recomended.
+# 1 = Perform routines to increase system security. *Recommended.
 
 $doFingerprintPrevention = 1
 # 0 = Reverse system settings to default.
-# 1 = Perform routines to prevent fingerprints. *Recomended.
+# 1 = Perform routines to prevent fingerprints. *Recommended.
 
 $disableSystemRestore = 1
 # 0 = Enable system restore
-# 1 = Disable system restore. *Recomended.
+# 1 = Disable system restore. *Recommended.
 
 $disableNtfsEncryption = 1
 # 0 = Enable NTFS file encryption
-# 1 = Disable NTFS file encryption. *Recomended.
+# 1 = Disable NTFS file encryption. *Recommended.
 # NTFS file encryption is the built-in encryption tool in Windows used to encrypt files and folders on NTFS drives to protect them from unwanted access
 # Disabling it can reduce the processing overhead of filesystem operations
 
 $disableNtfsCompression = 1
 # 0 = Enable NTFS file compression
-# 1 = Disable NTFS file compression. *Recomended.
+# 1 = Disable NTFS file compression. *Recommended.
 # Disabling it can increase performance
 
 $disableVBS = 1
 # 0 = Enable VBS
-# 1 = Disable VBS. *Recomended.
+# 1 = Disable VBS. *Recommended.
 # VBS (Virtualization-based security) prevent unsigned or questionable drivers and software from getting into memory
 # Disabling it may have a significant performance boost, specially in games
 
@@ -214,7 +215,7 @@ $hybernateDcTimeout = 0
 
 $firefoxSettings = 1
 # 0 = Keep Firefox settings unchanged.
-# 1 = Apply pro Firefox settings. Disable update, cross-domain cookies... *Recomended.
+# 1 = Apply pro Firefox settings. Disable update, cross-domain cookies... *Recommended.
 
 $firefoxCachePath = "";
 # Leave it EMPTY or...
@@ -223,28 +224,28 @@ $firefoxCachePath = "";
 
 $remove3dObjFolder = 1
 # 0 = Keep 3d object folder.
-# 1 = Remove 3d object folder. *Recomended.
+# 1 = Remove 3d object folder. *Recommended.
 
 $disableWindowsSounds = 1
 # 0 = Do nothing (it won't reenable it);
-# 1 = Disable Windows sound effects. *Recomended.
+# 1 = Disable Windows sound effects. *Recommended.
 # If you want to re-enable it, will have to do it manually
 
 $disablePerformanceMonitor = 1
 # 0 = Do nothing;
-# 1 = Disable Windows Performance Logs Monitor and clear all .etl caches. *Recomended.
+# 1 = Disable Windows Performance Logs Monitor and clear all .etl caches. *Recommended.
 
 $unpinStartMenu = 1
 # 0 = Do nothing;
 # 1 = Unpin all apps from start menu.
 
-$unnistallWindowsDefender = 1
+$uninstallWindowsDefender = 0
 # 0 = Do nothing (won't re-install it);
 # 1 = Unnistall Windows Defender, irreversible. Safe mode is required.
 
 $disableBloatware = 1
 # 0 = Install Windows Bloatware that are not commented in bloatwareList array.
-# 1 = Remove non commented bloatware in bloatwareList array. *Recomended.
+# 1 = Remove non commented bloatware in bloatwareList array. *Recommended.
 # Note: On bloatwareList comment the lines on Appxs that you want to keep/install.
 
 $editor='"%programfiles%\Notepad++\notepad++.exe"'
@@ -256,13 +257,13 @@ $bloatwareList = @(
 	#"*Microsoft.Advertising.Xaml_10.1712.5.0_x64__8wekyb3d8bbwe*"
 	#"*Microsoft.Advertising.Xaml_10.1712.5.0_x86__8wekyb3d8bbwe*"
 	#"*Microsoft.MSPaint*"
-	#"*Microsoft.MicrosoftStickyNotes*"
+	"*Microsoft.MicrosoftStickyNotes*"
 	#"*Microsoft.Windows.Photos*"
 	#"*Microsoft.WindowsCalculator*"
 	#"*Microsoft.WindowsStore*"
 	#"*Microsoft.WindowsCamera*"
 	"*Microsoft.BingWeather*"
-	"MicrosoftTeams*"
+	#"MicrosoftTeams*"
 	
 	# Unnecessary AppX Apps
 	"*Microsoft.DrawboardPDF*"
@@ -279,9 +280,9 @@ $bloatwareList = @(
 	"Microsoft.MicrosoftSolitaireCollection"
 	"Microsoft.NetworkSpeedTest"
 	"Microsoft.News"
-	"Microsoft.Office.Lens"
-	"Microsoft.Office.OneNote"
-	"Microsoft.Office.Sway"
+	#"Microsoft.Office.Lens"
+	#"Microsoft.Office.OneNote"
+	#"Microsoft.Office.Sway"
 	"Microsoft.OneConnect"
 	"Microsoft.People"
 	"Microsoft.Print3D"
@@ -1347,11 +1348,12 @@ if ($doPerformanceStuff -eq 1) {
 	Write-Output "Troubleshoot Install: Enabling Windows Management Instrumentation service enabled."
 	Get-Service Winmgmt | Start-Service -PassThru | Set-Service -StartupType disabled
 	
-	RegChange "SYSTEM\CurrentControlSet\Services\StorSvc" "Start" "4" "Disabling StorSvc (Storage Service) service" "DWord"
-	Get-Service StorSvc | Set-Service -StartupType disabled
-	
 	RegChange "SYSTEM\CurrentControlSet\Services\MSDTC" "Start" "4" "Disabling MSDTC (Distributed Transaction Coordinator) service" "DWord"
 	Get-Service MSDTC | Set-Service -StartupType disabled
+	
+	# Hinders login to Office apps
+	# RegChange "SYSTEM\CurrentControlSet\Services\TokenBroker" "Start" "4" "Disabling TokenBroker (Web Account Manager) service" "DWord"
+	# Get-Service TokenBroker | Set-Service -StartupType disabled
 	
 	RegChange "SYSTEM\CurrentControlSet\Services\Ndu" "Start" "4" "Disabling Ndu (Network Data Usage Monitor) service" "DWord"
 	Get-Service Ndu | Set-Service -StartupType disabled
@@ -1370,15 +1372,18 @@ if ($doPerformanceStuff -eq 1) {
 	RegChange "SYSTEM\CurrentControlSet\Services\TrkWks" "Start" "4" "Disabling TrkWks (Distributed Link Tracking Client) service" "DWord"
 	Get-Service TrkWks | Set-Service -StartupType disabled
 	
-	RegChange "SYSTEM\CurrentControlSet\Services\BthAvctpSvc" "Start" "4" "Disabling AVCTP (Audio Video Control Transport Protocol) service" "DWord"
-	Get-Service BthAvctpSvc | Set-Service -StartupType disabled
+	# Disables Windows 11's capability to switch between low quality hands-free headphone driver and high sound quality headphone driver - defaults to low quality sound...
+	# RegChange "SYSTEM\CurrentControlSet\Services\BthAvctpSvc" "Start" "4" "Disabling AVCTP (Audio Video Control Transport Protocol) service" "DWord"
+	# Get-Service BthAvctpSvc | Set-Service -StartupType disabled
 	
 	RegChange "SYSTEM\CurrentControlSet\Services\DispBrokerDesktopSvc" "Start" "4" "Disabling DispBrokerDesktopSvc (Display Policy Service) service" "DWord"
 	Get-Service DispBrokerDesktopSvc | Set-Service -StartupType disabled
 	
+	if ($disableWindowsUpdates -eq 1 ) {
 	# DoSvc (Delivery Optimization) it overrides the windows updates opt-out user option, turn your pc into a p2p peer for Windows updates, mining your network performance and compromises your online gameplay, work and navigation
 	RegChange "SYSTEM\CurrentControlSet\Services\DoSvc" "Start" "4" "Disabling DoSvc (Delivery Optimization) service" "DWord"
 	Get-Service DoSvc | Set-Service -StartupType disabled
+	}
 	
 	if ($beOneDriveSafe -eq 0 ) {
 	RegChange "SYSTEM\CurrentControlSet\Services\OneSyncSvc" "Start" "4" "Disabling OneSyncSvc service" "DWord"
@@ -1392,7 +1397,7 @@ if ($doPerformanceStuff -eq 1) {
 	Get-Service diagnosticshub.standardcollector.service | Set-Service -StartupType disabled
 	
 	#In very rare cases, Hardware Accelerated GPU Scheduling set to ON (2) may improve latency
-	RegChange "SYSTEM\CurrentControlSet\Control\GraphicsDrivers" "HwSchMode" "2" "Disabling Hardware Accelerated GPU Scheduling" "DWord"
+	# RegChange "SYSTEM\CurrentControlSet\Control\GraphicsDrivers" "HwSchMode" "2" "Disabling Hardware Accelerated GPU Scheduling" "DWord"
 	
 	RegChange "Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" "EnableTransparency" "0" "Disabling Windows transparency effect" "DWord"
 	RegChange "SYSTEM\CurrentControlSet\services\WdiServiceHost" "Start" "4" "Disabling Diagnostic Service Host" "DWord"
@@ -1403,6 +1408,14 @@ if ($doPerformanceStuff -eq 1) {
 	deleteFile "$env:WINDIR\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_577df0ba9db954d8\nvngx_update.exe" "Deleting Nvidia nvngx_update (bandwidth usage, lack of parameters for users to choose when its suppose to update)..."
 	RegChange "System\CurrentControlSet\Control\Session Manager\Power" "HibernateEnabled" "0" "Disabling hibernation..." "DWord"
 	RegChange "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FlyoutMenuSettings" "ShowHibernateOption" "0" "Hiding hibernation..." "DWord"
+
+	if ($disableWindowsUpdates -eq 0) {
+		Write-Host "BITS NOT disabled because of the disableWindowsUpdates configuration" -ForegroundColor Yellow -BackgroundColor DarkGreen
+	}	else {
+		# BITS (Background Intelligent Transfer Service), its aggressive bandwidth eating will interfere with you online gameplay, work and navigation. Its aggressive disk usable will reduce your HDD or SSD lifespan
+		Write-Host "Disabling BITS Background Intelligent Transfer Service"
+		Get-Service BITS | Stop-Service -PassThru | Set-Service -StartupType disabled		
+	}
 	
 	Write-Output "Disabling EpsonCustomerResearchParticipation..."
 	Get-Service EpsonCustomerResearchParticipation | Stop-Service -PassThru | Set-Service -StartupType disabled
@@ -1420,17 +1433,17 @@ if ($doPerformanceStuff -eq 1) {
 	Write-Host "Stopping and disabling Superfetch service..."
 	Get-Service SysMain | Stop-Service -PassThru | Set-Service -StartupType disabled	
 	
-	Write-Host "Stopping and disabling SSDPSRV service..."
-	Get-Service SSDPSRV | Stop-Service -PassThru | Set-Service -StartupType disabled
+	# Write-Host "Stopping and disabling SSDPSRV service..."
+	# Get-Service SSDPSRV | Stop-Service -PassThru | Set-Service -StartupType disabled
 	
-	Write-Host "Stopping and disabling AxInstSV service..."
-	Get-Service AxInstSV | Stop-Service -PassThru | Set-Service -StartupType disabled
+	# Write-Host "Stopping and disabling AxInstSV service..."
+	# Get-Service AxInstSV | Stop-Service -PassThru | Set-Service -StartupType disabled
 	
 	Write-Host "Stopping and disabling MapsBroker (Downloaded Maps Manager) service..."
 	Get-Service MapsBroker | Stop-Service -PassThru | Set-Service -StartupType disabled
 	
-	RegChange "SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization" "DODownloadMode" "100" "Disabling DeliveryOptimization Peering and HTTP download mode (bypass mode)..." "DWord"
-	RegChange "SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" "DODownloadMode" "100" "Disabling DeliveryOptimization Peering and HTTP download mode (bypass mode)..." "DWord"	
+	# RegChange "SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization" "DODownloadMode" "100" "Disabling DeliveryOptimization Peering and HTTP download mode (bypass mode)..." "DWord"
+	# RegChange "SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" "DODownloadMode" "100" "Disabling DeliveryOptimization Peering and HTTP download mode (bypass mode)..." "DWord"	
 	RegChange "System\CurrentControlSet\Services\edgeupdate*" "Start" "4" "Disabling Edge updates..." "DWord"
 	
 	regDelete "Software\Microsoft\Windows\CurrentVersion\Run\com.squirrel.Teams.Teams" "Disabling MS Teams updater"
@@ -1568,9 +1581,10 @@ if ($doQualityOfLifeStuff -eq 1) {
 	RegChange "Control Panel\Accessibility" "DynamicScrollbars " "0" "Disabling dynamic scrollbars..." "DWord"	
 	RegChange "SOFTWARE\Policies\Microsoft\MRT" "DontOfferThroughWUAU " "1" "Disabling Malicious Software Removal Tool offering" "DWord"
 	
-	write-Host "Fast Boot is known to cause problems with steam" -ForegroundColor Green -BackgroundColor Black 
-	RegChange "SYSTEM\CurrentControlSet\Control\Session Manager\Power" "HiberbootEnabled" "0" "Disabling Fast boot..." "DWord"
-	powercfg /hibernate OFF
+	# Only relevant for Steam users
+	# write-Host "Fast Boot is known to cause problems with steam" -ForegroundColor Green -BackgroundColor Black 
+	# RegChange "SYSTEM\CurrentControlSet\Control\Session Manager\Power" "HiberbootEnabled" "0" "Disabling Fast boot..." "DWord"
+	# powercfg /hibernate OFF
 	
 	Write-Host "RAZER services that allows third party software to mess with your keyboard backlight" -ForegroundColor Green -BackgroundColor Black 	
 	Write-Output "Disabling Razer Chroma SDK Server..."
@@ -1578,13 +1592,12 @@ if ($doQualityOfLifeStuff -eq 1) {
 	Write-Output "Disabling Razer Chroma SDK Service..."
 	Get-Service "Razer Chroma SDK Service" | Stop-Service -PassThru | Set-Service -StartupType disabled
 
-	Write-Output "Disabling WpnService, push notification anoyance service..."
+	# [mv] Might hinder installation of Docker
+	Write-Output "Disabling WpnService, push notification annoyance service..."
 	Get-Service WpnService | Stop-Service -PassThru | Set-Service -StartupType disabled
+	RegChange "System\CurrentControlSet\Services\WpnUserService*" "Start" "4" "Disabling WpnUserService, push notification annoyance service..." "DWord"	
 
-	# WpnUserService is required by the taskbar to work properly
-	# RegChange "System\CurrentControlSet\Services\WpnUserService*" "Start" "4" "Disabling WpnUserService, push notification anoyance service..." "DWord"	
-	
-	RegChange "Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" "NoGenTicket" "0" "Disabling Licence Checking..." "DWord"	
+	RegChange "Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Protection Platform" "NoGenTicket" "0" "Disabling License Checking..." "DWord"	
 	RegChange "SOFTWARE\Microsoft\Windows\Windows Error Reporting" "Disabled" "1" "Disabling Error reporting..." "DWord"
 	if ($(serviceStatus("Schedule")) -eq "running") {
 		Write-Host "Disabling Error reporting task..."
@@ -1592,8 +1605,11 @@ if ($doQualityOfLifeStuff -eq 1) {
 	}
 	
 	RegChange "Control Panel\Accessibility\StickyKeys" "Flags" "506" "Disabling Sticky keys prompt..." "DWord"
-	RegChange "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu" "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" "0" "Show This PC shortcut on desktop..." "DWord"
-	RegChange "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" "0" "Show This PC shortcut on desktop..." "DWord"
+
+	# Only relevant if you want the PC shortcut on the Desktop
+	# RegChange "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu" "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" "0" "Show This PC shortcut on desktop..." "DWord"
+	# RegChange "Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" "0" "Show This PC shortcut on desktop..." "DWord"
+
 	RegChange "Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "ShowSyncProviderNotifications" "0" "Disabling Windows Ads within file explorer..." "DWord"
 	RegChange "SOFTWARE\Policies\Microsoft\Windows\CloudContent" "DisableThirdPartySuggestions" "1" "Disabling Windows suggestions of apps and content from third-party software publishers..." "DWord"
 	RegChange "Control Panel\Mouse" "MouseSpeed" "0" "Disabling Windows enhanced pointer precision..." "DWord"
@@ -1695,7 +1711,7 @@ if ($doPrivacyStuff -eq 0) {
 	RegChange "SYSTEM\ControlSet\Control\WMI\AutoLogger\WFP-IPsec Trace" "Start" "1" "Enabling AutoLogger\WFP-IPsec Trace..." "DWord"	
 	RegChange "SYSTEM\ControlSet\Control\WMI\AutoLogger\WiFiDriverIHVSessionRepro" "Start" "1" "Enabling AutoLogger\WiFiDriverIHVSessionRepro..." "DWord"	
 	RegChange "SYSTEM\ControlSet\Control\WMI\AutoLogger\WiFiSession" "Start" "1" "Enabling AutoLogger\WiFiSession..." "DWord"	
-	RegChange "SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds" "AllowBuildPreview" "0" "Enabling Windows Insider Program..." "DWord"	
+	RegChange "SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds" "AllowBuildPreview" "1" "Enabling Windows Insider Program..." "DWord"	
 	RegChange "SYSTEM\CurrentControlSet\Services\TimeBrokerSvc" "Start" "2" "Enabling Time Brooker..." "DWord"
 
 	Write-Output "Setting network to private..."
@@ -1842,9 +1858,9 @@ if ($doPrivacyStuff -eq 1) {
 	
 	if ($beTaskScheduleSafe -eq 1 -or $beLenovoVantagePowerSettingsSafe -eq 1) {
 		Write-Host "TimeBrokerSvc NOT disabled because of the beTaskScheduleSafe configuration" -ForegroundColor Yellow -BackgroundColor DarkGreen
-		RegChange "SYSTEM\CurrentControlSet\Services\TimeBrokerSvc" "Start" "2" "Enabling Time Brooker..." "DWord"
+		RegChange "SYSTEM\CurrentControlSet\Services\TimeBrokerSvc" "Start" "2" "Enabling Time Broker..." "DWord"
 	} else {	
-		RegChange "SYSTEM\CurrentControlSet\Services\TimeBrokerSvc" "Start" "4" "Disabling Time Brooker due to huge network usage and for spying users..." "DWord"
+		RegChange "SYSTEM\CurrentControlSet\Services\TimeBrokerSvc" "Start" "4" "Disabling Time Broker due to huge network usage and for spying users..." "DWord"
 	}
 	
 	Set-NetConnectionProfile -NetworkCategory Public
@@ -1880,11 +1896,19 @@ if ($doPrivacyStuff -eq 1) {
 	deleteFile "$env:WINDIR\system32\AppHostRegistrationVerifier.exe" "Deleting AppHostRegistrationVerifier.exe..."		
 	deleteFile "$env:WINDIR\system32\wbem\wmiprvse.exe" "Deleting WMI Provider Host..."	
 	
-	write-Host "Windows Insider Service contact web servers by its own" -ForegroundColor Green -BackgroundColor Black 
-	Write-Host "Stopping and disabling wisvc (Windows Insider Service)..."
-	Get-Service wisvc | Stop-Service -PassThru | Set-Service -StartupType disabled
+	# [mv] Hinders Windows Insider Program
+	# write-Host "Windows Insider Service contact web servers by its own" -ForegroundColor Green -BackgroundColor Black 
+	# Write-Host "Stopping and disabling wisvc (Windows Insider Service)..."
+	# Get-Service wisvc | Stop-Service -PassThru | Set-Service -StartupType disabled
 
-	# EventLog disabled causes Windows to crash
+	if ($disableWindowsUpdates -eq 0) {
+		Write-Host "CryptSvc NOT disabled because of the disableWindowsUpdates configuration" -ForegroundColor Yellow -BackgroundColor DarkGreen
+	}	else {
+		Write-Host "Stopping and disabling CryptSvc (Cryptographic Services)..."
+		Get-Service CryptSvc | Stop-Service -PassThru | Set-Service -StartupType disabled	
+	}	
+	
+	# [mv] Freezes "Downloads" and similar user folders upon opening
 	# Write-Host "Stopping and disabling EventLog (Windows Event Log)..."
 	# Get-Service EventLog | Stop-Service -PassThru | Set-Service -StartupType disabled	
 		
@@ -2021,7 +2045,8 @@ if ($doFingerprintPrevention -eq 0) {
 }
 
 if ($doFingerprintPrevention -eq 1) {
-	RegChange "Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "NoRecentDocsHistory" "1" "Disabling Recent docs history " "DWord"
+	# [von-court]
+	# RegChange "Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "NoRecentDocsHistory" "1" "Disabling Recent docs history " "DWord"
 	RegChange "Software\Microsoft\Windows\CurrentVersion\Policies\Attachments" "SaveZoneInformation" "1" "Disabling Windows save zone information..." "DWord"
 	RegChange "SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet" "EnableActiveProbing" "0" "Disabling internet connection test... " "DWord"
 	RegChange "SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" "NoRecycleFiles" "1" "Disabling recycle bin... " "DWord"
@@ -2313,7 +2338,7 @@ if ($useGoogleDNS -eq 1) {
 	$Interface.SetDNSServerSearchOrder($dns)  | Out-Null
 }
 
-if ($unnistallWindowsDefender -eq 1) {
+if ($uninstallWindowsDefender -eq 1) {
 	Write-Output "Checking if you are in safe mode..."
 	$mySafeMode = gwmi win32_computersystem | select BootupState
 	if ($mySafeMode -notlike '*Normal boot*') {
@@ -2518,7 +2543,7 @@ RegChange "SOFTWARE\Microsoft\CTF\LangBar" "Label" "1" "Fix language bar..." "DW
 RegChange "SOFTWARE\Microsoft\CTF\LangBar" "ShowStatus" "4" "Fix language bar..." "DWord"
 RegChange "SOFTWARE\Microsoft\Windows\CurrentVersion\Run" "CTFMON" "ctfmon.exe" "Fix typing in windows search bar..." "String"
 
-$visual = Read-Host "Install Initial Packages? (y/n)"
+$visual = Read-Host "Install initial packages? (y/n)"
 
 while("y","n" -notcontains $visual)
 {
@@ -2588,23 +2613,23 @@ if ($beOneDriveSafe -eq 0 ) {
 
 # REMOVE ONEDRIVE
 kill -processname OneDrive, aaa -Force -Verbose -EA SilentlyContinue
-if($?){   write-Host -ForegroundColor Green "One Drive process has been stoped"  }else{   write-Host -ForegroundColor Green "One Drive process is not running" } 
+	if($?){   write-Host -ForegroundColor Green "OneDrive process has been stopped"  }else{   write-Host -ForegroundColor Green "OneDrive process is not running" } 
 
 if (Test-Path "$env:SYSTEMROOT\SysWOW64\OneDriveSetup.exe") {
 "$env:SYSTEMROOT\SysWOW64\OneDriveSetup.exe /uninstall" | Out-Null
-if($?){   write-Host -ForegroundColor Green "One Drive has been uninstalled"  }else{   write-Host -ForegroundColor red "One Drive uninstaller failed!" } 
+	if($?){   write-Host -ForegroundColor Green "OneDrive has been uninstalled"  }else{   write-Host -ForegroundColor red "OneDrive uninstaller failed!" } 
 }Else{
-write-Host -ForegroundColor yellow "One Drive unnistaller is not present on the system"
+	write-Host -ForegroundColor yellow "OneDrive unistaller is not present on the system"
 }
 
 Remove-Item "$env:USERPROFILE\OneDrive\*.*" -Force -ErrorAction SilentlyContinue
-if($?){   write-Host -ForegroundColor Green "One Drive files removed"  }else{   write-Host -ForegroundColor red "One Drive files not Removed" } 
+	if($?){   write-Host -ForegroundColor Green "OneDrive files removed"  }else{   write-Host -ForegroundColor red "OneDrive files not Removed" } 
 
 Remove-Item "C:\OneDriveTemp\*.*" -Force -EA SilentlyContinue | Out-Null
-if($?){   write-Host -ForegroundColor Green "One Drive temp files Removed (Step 2)"  }else{   write-Host -ForegroundColor green "One Drive temp files not present" } 
+	if($?){   write-Host -ForegroundColor Green "OneDrive temp files Removed (Step 2)"  }else{   write-Host -ForegroundColor green "OneDrive temp files not present" } 
 
 Remove-Item "$env:LOCALAPPDATA\Microsoft\OneDrive\" -Force -EA SilentlyContinue | Out-Null
-if($?){   write-Host -ForegroundColor Green "One Drive appdata folder removed"  }else{   write-Host -ForegroundColor green "One Drive appdata folder not present" } 
+	if($?){   write-Host -ForegroundColor Green "OneDrive appdata folder removed"  }else{   write-Host -ForegroundColor green "OneDrive appdata folder not present" } 
 
 }
 
