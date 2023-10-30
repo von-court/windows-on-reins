@@ -2,6 +2,32 @@
 [![made-with-powershell](https://img.shields.io/badge/PowerShell-1f425f?logo=Powershell)](https://microsoft.com/PowerShell)
 [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/SGHFtvx4bN)
 
+## Open Issues
+- [x] Headphones low sound quality
+- [x] System tray doesn't show
+- [x] Downloads folder can't be opened, freezing
+- [ ] Windows Insider Update not working
+    - [x] Check if "need to turn on optional diagnostic data" warning is actually hindering and you still get new builds
+        - Yes, its hindering
+    - [ ] disableTelemetry
+    - [ ] Add as option
+- [x] Windows Updates not working
+    - [x] Figure out reason
+    - [wip] Check if disabling delivery optimization service really hinders downloads
+    - [ ] Add "beWindowsUpdateSafe" option
+- [ ] Wifi has often "No Internet"
+    - [x] disable beVpnPppoeSafe, useGoogleDNS, doSecurityStuff
+    - [wip] doQualityOfLifeStuff, doPerformanceStuff, doPrivacyStuff, doSecurityStuff
+- [ ] Slower startup?
+
+## Potential New Optimizations
+- Windows Search
+- TermService
+- SessionEnv
+- SharedAccess
+- ClickToRunSvc
+- Bonjour Service
+
 ## Warning
 I do not take responsibility for what may happen to your system. This is at your own risk.
 
