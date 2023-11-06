@@ -6,18 +6,29 @@
 - [x] Headphones low sound quality
 - [x] System tray doesn't show
 - [x] Downloads folder can't be opened, freezing
-- [ ] Windows Insider Update not working
-    - [x] Check if "need to turn on optional diagnostic data" warning is actually hindering and you still get new builds
-        - Yes, its hindering
-    - [ ] disableTelemetry
+- [ ] Windows Insider
+    - [ ] Downloads not working
+        - [x] Check if "need to turn on optional diagnostic data" warning is actually hindering and you still get new builds
+            - Yes, its hindering
+        - [x] disableTelemetry
+        - [x] doQualityOfLifeStuff
+        - [wip] doPerformanceStuff
+        - [wip] doPrivacyStuff
+        - [wip] doSecurityStuff
+        - Delivery Optimization
+        - DusmSvc
+    - [ ] "We can't reach the Windows Insider Program right now..."
+        - [x] wlidsvc [is needed!]
+        - [ ] DiagTrack 
     - [ ] Add as option
 - [x] Windows Updates not working
     - [x] Figure out reason
-    - [wip] Check if disabling delivery optimization service really hinders downloads
+    - [wip: deactivated] Check if disabling delivery optimization service really hinders downloads
     - [ ] Add "beWindowsUpdateSafe" option
 - [ ] Wifi has often "No Internet"
     - [x] disable beVpnPppoeSafe, useGoogleDNS, doSecurityStuff
-    - [wip] doQualityOfLifeStuff, doPerformanceStuff, doPrivacyStuff, doSecurityStuff
+    - [wip] Seems to be no longer occuring...
+    - [ ] doQualityOfLifeStuff, doPerformanceStuff, doPrivacyStuff, doSecurityStuff
 - [ ] Slower startup?
 
 ## Potential New Optimizations

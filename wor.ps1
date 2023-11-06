@@ -159,19 +159,19 @@ $disablelastaccess = 1
 # 0 = Enable it.
 # 1 = Disable last file access date. *Recommended.
 
-$doQualityOfLifeStuff = 1
+$doQualityOfLifeStuff = 0
 # 0 = Reverse system settings to default.
 # 1 = Perform routines to increase quality of life. *Recommended.
 
-$doPerformanceStuff = 1
+$doPerformanceStuff = 0
 # 0 = Reverse system settings to default.
 # 1 = Perform routines to increase system performance. *Recommended.
 
-$doPrivacyStuff = 1
+$doPrivacyStuff = 0
 # 0 = Reverse system settings to default.
 # 1 = Perform routines to increase system privacy. *Recommended.
 
-$doSecurityStuff = 1
+$doSecurityStuff = 0
 # 0 = Reverse system settings to default.
 # 1 = Perform routines to increase system security. *Recommended.
 
@@ -313,7 +313,7 @@ $bloatwareList = @(
 	"*Flipboard.Flipboard*"
 	"*Twitter*"
 	"*Facebook*"
-	"*Spotify*"
+	# "*Spotify*"
 	"*Minecraft*"
 	"*Royal Revolt*"
 	"*Sway*"
@@ -328,6 +328,8 @@ $bloatwareList = @(
 	"*Amazon*"
 	"*Roblox*"
 	"*AdobePhotoshop*"
+	"*TikTok*"
+	"*ESPN*"
 	
 	
 	# Special Cases
@@ -1326,16 +1328,16 @@ if ($doPerformanceStuff -eq 0) {
 
 if ($doPerformanceStuff -eq 1) {
 	# Parental Controls
-	Write-Output "Disabling Windows Parental Controls..."
-	Get-Service WpcMonSvc | Stop-Service -PassThru | Set-Service -StartupType disabled	
+	# Write-Output "Disabling Windows Parental Controls..."
+	# Get-Service WpcMonSvc | Stop-Service -PassThru | Set-Service -StartupType disabled	
 
 	# Diagnostic Execution Service
 	Write-Output "Disabling Windows Diagnostic Execution Service..."
 	Get-Service diagsvc | Stop-Service -PassThru | Set-Service -StartupType disabled	
 
 	# USELESS FAX
-	Get-Service Fax | Stop-Service -PassThru | Set-Service -StartupType disabled
-	if($?){   write-Host -ForegroundColor Green "Windows Fax service disabled"  }else{   write-Host -ForegroundColor red "Windows Fax service not disabled" } 
+	# Get-Service Fax | Stop-Service -PassThru | Set-Service -StartupType disabled
+	# if($?){   write-Host -ForegroundColor Green "Windows Fax service disabled"  }else{   write-Host -ForegroundColor red "Windows Fax service not disabled" } 
 
 	# USELESS GEO
 	Get-Service lfsvc | Stop-Service -PassThru | Set-Service -StartupType disabled
@@ -1348,15 +1350,17 @@ if ($doPerformanceStuff -eq 1) {
 	Write-Output "Troubleshoot Install: Enabling Windows Management Instrumentation service enabled."
 	Get-Service Winmgmt | Start-Service -PassThru | Set-Service -StartupType disabled
 	
-	RegChange "SYSTEM\CurrentControlSet\Services\MSDTC" "Start" "4" "Disabling MSDTC (Distributed Transaction Coordinator) service" "DWord"
-	Get-Service MSDTC | Set-Service -StartupType disabled
+	# RegChange "SYSTEM\CurrentControlSet\Services\MSDTC" "Start" "4" "Disabling MSDTC (Distributed Transaction Coordinator) service" "DWord"
+	# Get-Service MSDTC | Set-Service -StartupType disabled
 	
 	# Hinders login to Office apps
-	# RegChange "SYSTEM\CurrentControlSet\Services\TokenBroker" "Start" "4" "Disabling TokenBroker (Web Account Manager) service" "DWord"
-	# Get-Service TokenBroker | Set-Service -StartupType disabled
+	RegChange "SYSTEM\CurrentControlSet\Services\TokenBroker" "Start" "4" "Disabling TokenBroker (Web Account Manager) service" "DWord"
+	Get-Service TokenBroker | Set-Service -StartupType disabled
 	
 	RegChange "SYSTEM\CurrentControlSet\Services\Ndu" "Start" "4" "Disabling Ndu (Network Data Usage Monitor) service" "DWord"
 	Get-Service Ndu | Set-Service -StartupType disabled
+	
+	## mv stopped here
 	
 	RegChange "SYSTEM\CurrentControlSet\Services\AppMgmt" "Start" "4" "Disabling AppMgmt (Application Management) service" "DWord"
 	Get-Service AppMgmt | Set-Service -StartupType disabled
@@ -1380,9 +1384,9 @@ if ($doPerformanceStuff -eq 1) {
 	Get-Service DispBrokerDesktopSvc | Set-Service -StartupType disabled
 	
 	if ($disableWindowsUpdates -eq 1 ) {
-	# DoSvc (Delivery Optimization) it overrides the windows updates opt-out user option, turn your pc into a p2p peer for Windows updates, mining your network performance and compromises your online gameplay, work and navigation
-	RegChange "SYSTEM\CurrentControlSet\Services\DoSvc" "Start" "4" "Disabling DoSvc (Delivery Optimization) service" "DWord"
-	Get-Service DoSvc | Set-Service -StartupType disabled
+		# DoSvc (Delivery Optimization) it overrides the windows updates opt-out user option, turn your pc into a p2p peer for Windows updates, mining your network performance and compromises your online gameplay, work and navigation
+		RegChange "SYSTEM\CurrentControlSet\Services\DoSvc" "Start" "4" "Disabling DoSvc (Delivery Optimization) service" "DWord"
+		Get-Service DoSvc | Set-Service -StartupType disabled
 	}
 	
 	if ($beOneDriveSafe -eq 0 ) {
@@ -1853,7 +1857,7 @@ if ($doPrivacyStuff -eq 1) {
 	RegChange "SYSTEM\ControlSet\Control\WMI\AutoLogger\WiFiSession" "Start" "0" "Disabling AutoLogger\WiFiSession..." "DWord"	
 
 	if ($beWindowsInsiderSafe -eq 0 ) {
-	RegChange "SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds" "AllowBuildPreview" "0" "Disabling Windows Insider Program..." "DWord"	
+		RegChange "SOFTWARE\Policies\Microsoft\Windows\PreviewBuilds" "AllowBuildPreview" "0" "Disabling Windows Insider Program..." "DWord"	
 	}
 	
 	if ($beTaskScheduleSafe -eq 1 -or $beLenovoVantagePowerSettingsSafe -eq 1) {
@@ -1896,10 +1900,11 @@ if ($doPrivacyStuff -eq 1) {
 	deleteFile "$env:WINDIR\system32\AppHostRegistrationVerifier.exe" "Deleting AppHostRegistrationVerifier.exe..."		
 	deleteFile "$env:WINDIR\system32\wbem\wmiprvse.exe" "Deleting WMI Provider Host..."	
 	
-	# [mv] Hinders Windows Insider Program
-	# write-Host "Windows Insider Service contact web servers by its own" -ForegroundColor Green -BackgroundColor Black 
-	# Write-Host "Stopping and disabling wisvc (Windows Insider Service)..."
-	# Get-Service wisvc | Stop-Service -PassThru | Set-Service -StartupType disabled
+	if ($beWindowsInsiderSafe -eq 0) {
+		write-Host "Windows Insider Service contact web servers by its own" -ForegroundColor Green -BackgroundColor Black 
+		Write-Host "Stopping and disabling wisvc (Windows Insider Service)..."
+		Get-Service wisvc | Stop-Service -PassThru | Set-Service -StartupType disabled
+	}
 
 	if ($disableWindowsUpdates -eq 0) {
 		Write-Host "CryptSvc NOT disabled because of the disableWindowsUpdates configuration" -ForegroundColor Yellow -BackgroundColor DarkGreen
