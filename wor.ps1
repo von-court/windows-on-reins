@@ -838,8 +838,8 @@ if ($troubleshootInstalls -eq 1) {
 	Get-Service diagnosticshub.standardcollector.service | Set-Service -StartupType automatic
 
 	# BITS (Background Intelligent Transfer Service), its aggressive bandwidth eating will interfere with you online gameplay, work and navigation. Its aggressive disk usable will reduce your HDD or SSD lifespan
-	write-Host "Troubleshoot Install: Enabling BITS (Background Intelligent Transfer Service)" -ForegroundColor Green -BackgroundColor Black 
-	Get-Service BITS | Set-Service -StartupType automatic
+	# write-Host "Troubleshoot Install: Enabling BITS (Background Intelligent Transfer Service)" -ForegroundColor Green -BackgroundColor Black 
+	# Get-Service BITS | Set-Service -StartupType automatic
 	
 	write-Host "DoSvc (Delivery Optimization) it overrides the windows updates opt-out user option, turn your pc into a p2p peer for Windows updates, mining your network performance and compromises your online gameplay, work and navigation." -ForegroundColor Green -BackgroundColor Black
 	Write-Host "Troubleshoot Install: Enabling DoSvc (Delivery Optimization)..."
@@ -1247,8 +1247,8 @@ if ($doPerformanceStuff -eq 0) {
 	RegChange "SYSTEM\CurrentControlSet\Services\TrkWks" "Start" "2" "Enabling TrkWks (Distributed Link Tracking Client) service" "DWord"
 	Get-Service TrkWks | Set-Service -StartupType automatic
 	
-	RegChange "SYSTEM\CurrentControlSet\Services\BthAvctpSvc" "Start" "2" "Enabling AVCTP (Audio Video Control Transport Protocol) service" "DWord"
-	Get-Service BthAvctpSvc | Set-Service -StartupType automatic
+	# RegChange "SYSTEM\CurrentControlSet\Services\BthAvctpSvc" "Start" "2" "Enabling AVCTP (Audio Video Control Transport Protocol) service" "DWord"
+	# Get-Service BthAvctpSvc | Set-Service -StartupType automatic
 	
 	RegChange "SYSTEM\CurrentControlSet\Services\DispBrokerDesktopSvc" "Start" "2" "Enabling DispBrokerDesktopSvc (Display Policy Service) service" "DWord"
 	Get-Service DispBrokerDesktopSvc | Set-Service -StartupType automatic
@@ -1272,7 +1272,7 @@ if ($doPerformanceStuff -eq 0) {
 	RegChange "Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" "EnableTransparency" "1" "Enabling Windows transparency effect" "DWord"	
 	RegChange "SYSTEM\CurrentControlSet\services\WdiServiceHost" "Start" "2" "Enabling Diagnostic Service Host" "DWord"
 	RegChange "SYSTEM\CurrentControlSet\services\WdiSystemHost" "Start" "2" "Enabling Diagnostic System Host Service" "DWord"
-	RegChange "SYSTEM\CurrentControlSet\services\DPS" "Start" "2" "Enabling Diagnostic Policy Service" "DWord"
+	# RegChange "SYSTEM\CurrentControlSet\services\DPS" "Start" "2" "Enabling Diagnostic Policy Service" "DWord"
 	
 	Write-Output "Enabling EpsonCustomerResearchParticipation..."
 	Get-Service EpsonCustomerResearchParticipation | Set-Service -StartupType automatic
@@ -1406,7 +1406,7 @@ if ($doPerformanceStuff -eq 1) {
 	RegChange "Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" "EnableTransparency" "0" "Disabling Windows transparency effect" "DWord"
 	RegChange "SYSTEM\CurrentControlSet\services\WdiServiceHost" "Start" "4" "Disabling Diagnostic Service Host" "DWord"
 	RegChange "SYSTEM\CurrentControlSet\services\WdiSystemHost" "Start" "4" "Disabling Diagnostic System Host Service" "DWord"
-	RegChange "SYSTEM\CurrentControlSet\services\DPS" "Start" "4" "Disabling Diagnostic Policy Service" "DWord"
+	# RegChange "SYSTEM\CurrentControlSet\services\DPS" "Start" "4" "Disabling Diagnostic Policy Service" "DWord"
 	
 	killProcess("nvngx_update");
 	deleteFile "$env:WINDIR\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_577df0ba9db954d8\nvngx_update.exe" "Deleting Nvidia nvngx_update (bandwidth usage, lack of parameters for users to choose when its suppose to update)..."
@@ -2292,7 +2292,7 @@ if ($disableWindowsUpdates -eq 0) {
 	
 	# BITS (Background Intelligent Transfer Service), its aggressive bandwidth eating will interfere with you online gameplay, work and navigation. Its aggressive disk usable will reduce your HDD or SSD lifespan
 	RegChange "SYSTEM\CurrentControlSet\Services\BITS" "Start" "2" "BITS (Background Intelligent Transfer Service) enabled" "DWord"
-	Get-Service BITS | Set-Service -StartupType automatic
+	# Get-Service BITS | Set-Service -StartupType automatic
 	
 	RegChange "SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" "NoAutoUpdate" "0" "Windows Update enabled" "DWord"
 	
@@ -2322,7 +2322,7 @@ if ($disableWindowsUpdates -eq 1) {
 	
 	# BITS (Background Intelligent Transfer Service), its aggressive bandwidth eating will interfere with you online gameplay, work and navigation. Its aggressive disk usable will reduce your HDD or SSD lifespan
 	RegChange "SYSTEM\CurrentControlSet\Services\BITS" "Start" "4" "Disabling BITS (Background Intelligent Transfer Service)" "DWord"
-	Get-Service BITS | Set-Service -StartupType disabled
+	# Get-Service BITS | Set-Service -StartupType disabled
 	
 	RegChange "SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" "NoAutoUpdate" "1" "Windows Update enabled" "DWord"
 	RegChange "SOFTWARE\Policies\Microsoft\Windows\Device Metadata" "PreventDeviceMetadataFromNetwork" "1" "Disabling retrieve device metadata for installed devices from the Internet" "DWord"
